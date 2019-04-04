@@ -11,7 +11,7 @@
 			<div class="wrap-login100">
 				
 					<span class="login100-form-title p-b-26">
-                        Selamat Datang
+                        Selamat Datangs
                         <p>Silahkan Login</p>
 					</span>
 
