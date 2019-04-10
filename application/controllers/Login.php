@@ -19,7 +19,9 @@ class Login extends CI_Controller{
             $datanya=$this->M_login->pengguna_masuk($login_pengguna['email_pengguna'],$login_pengguna['pass_pengguna']);
             if($datanya)
                 {
-                    $this->load->view("login/v_berhasil",$login_pengguna);
+                    
+                    redirect('Jadwaldosen');
+                    
                 }
                 else{
                     redirect('login');
