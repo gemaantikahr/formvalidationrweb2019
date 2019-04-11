@@ -1,20 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V2</title>
+	<title>Gema Antika Hariadi</title>
 	<?php $this->load->view("_partials/head.php") ?>
 </head>
 <body>
-<div class="container">
-    <center><div class="alert alert-success">
-        <strong>Gema Antika Hariadi</strong>
-    </div>
-    <div class="alert">
-        <strong>1600018095</strong>
-    </div>
-    </center>
-</div>
-	
 <div class="container">
   <h2>Data Dosen</h2>
   <button type="button" class="btn btn-primary">Tambah Dosen</button>        
@@ -37,7 +27,6 @@
     </tbody>
   </table>
 </div>
-<hr>
 <div class="container">
   <h2>Data Matakuliah</h2>
   <p>Praktikum Rweb</p>            
@@ -51,7 +40,7 @@
       </tr>
     </thead>
     <tbody>
-    <?php foreach($datamatkul as $data):?>
+    <?php foreach($matkul as $data):?>
       <tr>
         <td><?php echo $data->id_matkul?></td>
         <td><?php echo $data->nama_matkul?></td>
@@ -66,7 +55,6 @@
   </table>
   <a href="<?php echo site_url('matakuliah/add') ?>" class="btn btn-primary">Tambah Matkul</a>
 </div>
-<hr>
 <div class="container">
   <h2>Data Mata Kuliah Dan Dosen</h2>  <button type="button" class="btn btn-primary">POSTEST</button>        
   <table class="table table-striped">
@@ -90,6 +78,7 @@
     </tbody>
   </table>
 </div>
+
 
     <?php $this->load->view("_partials/js.php") ?>
 </body>
