@@ -18,6 +18,11 @@ class M_matakuliah extends CI_Model{
     function tampil_matkul(){
         return $this->db->get('tbl_matkul')->result();
     }
+    function tampil_matkulku(){
+        $this->db->order_by("id_matkul","DESC");
+        $query = $this->db->get("tbl_matkul");
+        return $query->result();
+    }
 
     function get_data(){
         $data=array();

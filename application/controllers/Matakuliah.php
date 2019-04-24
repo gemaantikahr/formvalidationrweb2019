@@ -4,27 +4,39 @@ class Matakuliah extends CI_Controller{
         parent::__construct();
         $this->load->model('m_matakuliah');
         $this->load->library('form_validation');
+        $this->load->library('excel');
 	}
 	function index(){
-        $data = array(
-            array(
-                'id_matkul'=>'1',
-                'nama_matkul'=>'APPL',
-                'semester'=>'6'
-            ),
-            array(
-                'id_matkul'=>'2',
-                'nama_matkul'=>'PRPL',
-                'semester'=>'4'
-            ),
-            array(
-                'id_matkul'=>'3',
-                'nama_matkul'=>'KWU',
-                'semester'=>'4'
-            )
-            );
         $data['matkul'] = $this->m_matakuliah->tampil_matkul();
         $this->load->view("matakuliah/v_tampil_matkul", $data);
+    }
+
+    function action(){
+        $object = new PHPExcel();
+        $object->setActiveSheetIndex(0);
+        $table_columns = array("id_matkul","nama","semester");
+        $column = 0;
+        foreach($table_columns as $field)
+        {
+        $object->getActiveSheet()->setCellValueByColumnAndRow($column, 1, $field);
+        $column++;
+        }
+
+        $data_matkul = $this->m_matakuliah->tampil_matkulku();
+
+        $excel_row = 2;
+
+        foreach($data_matkul as $row)
+        {
+        $object->getActiveSheet()->setCellValueByColumnAndRow(0, $excel_row, $row->id_matkul);
+        $object->getActiveSheet()->setCellValueByColumnAndRow(1, $excel_row, $row->nama_matkul);
+        $object->getActiveSheet()->setCellValueByColumnAndRow(2, $excel_row, $row->semester);
+        $excel_row++;
+        }
+        $object_writer = PHPExcel_IOFactory::createWriter($object, 'Excel2016');
+        header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment;filename="Employee Data.xls"');
+        $object_writer->save('php://output');
     }
 
     function depan(){

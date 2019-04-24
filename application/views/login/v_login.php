@@ -16,50 +16,13 @@
 					</span>
 
 					<?php echo form_open('login/masuk'); ?>
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
+					<div class="wrap-input100 validate-input" data-validate = "asd">
                         <input class="input100" type="text" name="xemail">
 						<span class="focus-input100" data-placeholder="Email"></span>
 						<font color="red"><?php echo form_error('xemail');?></font> 
 					</div>
-					<br>
+					<br>					
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<span class="btn-show-pass">
-							<i class="zmdi zmdi-eye"></i>
-						</span>
-						<input class="input100" type="password" name="xpassword">
-						<span class="focus-input100" data-placeholder="Password"></span>
-						<font color="red"><?php echo form_error('xpassword');?></font> 
-					</div>
-					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<span class="btn-show-pass">
-							<i class="zmdi zmdi-eye"></i>
-						</span>
-						<input class="input100" type="password" name="xpassword">
-						<span class="focus-input100" data-placeholder="Password"></span>
-						<font color="red"><?php echo form_error('xpassword');?></font> 
-					</div>
-					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<span class="btn-show-pass">
-							<i class="zmdi zmdi-eye"></i>
-						</span>
-						<input class="input100" type="password" name="xpassword">
-						<span class="focus-input100" data-placeholder="Password"></span>
-						<font color="red"><?php echo form_error('xpassword');?></font> 
-					</div>					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<span class="btn-show-pass">
-							<i class="zmdi zmdi-eye"></i>
-						</span>
-						<input class="input100" type="password" name="xpassword">
-						<span class="focus-input100" data-placeholder="Password"></span>
-						<font color="red"><?php echo form_error('xpassword');?></font> 
-					</div>					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<span class="btn-show-pass">
-							<i class="zmdi zmdi-eye"></i>
-						</span>
-						<input class="input100" type="password" name="xpassword">
-						<span class="focus-input100" data-placeholder="Password"></span>
-						<font color="red"><?php echo form_error('xpassword');?></font> 
-					</div>					<div class="wrap-input100 validate-input" data-validate="Enter password">
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>

@@ -34,7 +34,11 @@
   </table>
   <a href="<?php echo site_url('matakuliah/add') ?>" class="btn btn-primary">Tambah Matkul</a>
 </div>
-
+<div align="center">
+    <form method="post" action="<?php echo base_url(); ?>matakuliah/action">
+     <input type="submit" name="export" class="btn btn-success" value="Export" />
+    </form>
+   </div>
 
     <?php $this->load->view("_partials/js.php") ?>
 </body>

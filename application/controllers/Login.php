@@ -8,8 +8,9 @@ class Login extends CI_Controller{
 	function index(){
         $this->load->view("login/v_login");
     }
+    
     function masuk(){
-		$this->form_validation->set_rules('xemail', 'Email', 'trim|required|valid_email');
+		$this->form_validation->set_rules('xemail', 'Email', 'trim|required|valid_email', array('valid_email'=>'testing', 'required'=>'disini napa sih'));
 		$this->form_validation->set_rules('xpassword', 'Password', 'trim|required|min_length[8]');
         if($this->form_validation->run() != false){
             $login_pengguna=array(
