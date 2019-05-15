@@ -5,7 +5,9 @@
 	<?php $this->load->view("_partials/head.php") ?>
 </head>
 <body>
-	
+<div class="container">
+    <?php $this->load->view("_partials/navbar.php") ?>
+</div>
 <div class="container">
   <h2>Data Matakuliah</h2>
   <p>Praktikum Rweb</p>            

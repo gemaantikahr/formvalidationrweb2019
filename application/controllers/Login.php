@@ -10,24 +10,27 @@ class Login extends CI_Controller{
     }
     
     function masuk(){
-		$this->form_validation->set_rules('xemail', 'Email', 'trim|required|valid_email', array('valid_email'=>'testing', 'required'=>'disini napa sih'));
-		$this->form_validation->set_rules('xpassword', 'Password', 'trim|required|min_length[8]');
+        $this->form_validation->set_rules('xemail', 'Email', 'trim|required|valid_email',
+         array('valid_email'=>'Masukkan Email yang valid', 'required'=>'Disisi Please'));
+		$this->form_validation->set_rules('xpassword', 'Password', 'trim|required|min_length[5]|max_length[12]');
+        $pas= md5($this->input->post('xpassword'));
         if($this->form_validation->run() != false){
             $login_pengguna=array(
                 'email_pengguna'=>$this->input->post('xemail'),
-                'pass_pengguna'=>$this->input->post('xpassword')
+                'pass_pengguna'=>md5($this->input->post('xpassword'))
                 );
             $datanya=$this->M_login->pengguna_masuk($login_pengguna['email_pengguna'],$login_pengguna['pass_pengguna']);
             if($datanya)
                 {
-                    
                     redirect('Jadwaldosen');
                     
                 }
                 else{
+                    echo $pas;
                     redirect('login');
                 }
         }else{
+            echo $pas;
             $this->load->view('login/v_login');
         }
     }

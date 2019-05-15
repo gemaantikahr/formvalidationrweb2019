@@ -27,7 +27,7 @@
 							<i class="zmdi zmdi-eye"></i>
 						</span>
 						<input class="input100" type="password" name="xpassword">
-						<span class="focus-input100" data-placeholder="Password"></span>
+						<span class="focus-input100" data-placeholder="Password" minlength="5" minlength="12"></span>
 						<font color="red"><?php echo form_error('xpassword');?></font> 
 					</div>
 					
