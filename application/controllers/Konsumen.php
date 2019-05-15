@@ -17,7 +17,12 @@ class Konsumen extends CI_Controller{
     }
 
     function simpan_barang(){
-        $this->form_validation->set_rules('xnama', 'Nama Barang', 'required|xss_clean|alpha');
+        $this->form_validation->set_rules('xnama', 'Nama Barang', 'required|alpha_dash',
+        array('alpha_dash'=>'Tidak boleh ada angka','required'=>'Harus di isi'));
+        $this->form_validation->set_rules('xharga', 'Nama Barang', 'required|numeric',
+        array('numeric'=>'Harus angka','required'=>'Harus di isi'));
+        $this->form_validation->set_rules('xjumlah', 'Nama Barang', 'required|numeric',
+        array('numeric'=>'Harus angka','required'=>'Harus di isi'));
         if($this->form_validation->run() != false){
             $nama = $this->input->post('xnama');
             $harga = $this->input->post('xharga');
@@ -25,16 +30,13 @@ class Konsumen extends CI_Controller{
             $this->m_konsumen->simpan_barang($nama, $harga, $jumlah);
             redirect('konsumen');
         }else{
-            echo "gagal";
+            $this->load->view('konsumen/v_tambah_barang');
         }
-
     }
-
     function edit_barang($idbarang){
         $data['barang'] = $this->m_konsumen->edit_barang($idbarang);
         $this->load->view('konsumen/v_edit_barang', $data);
     }
-
     function update_barang(){
         $nama = $this->input->post('xnama');
         $harga = $this->input->post('xharga');
@@ -43,7 +45,6 @@ class Konsumen extends CI_Controller{
         $this->m_konsumen->update_barang($nama, $harga, $jumlah, $id);
         redirect('konsumen');
     }
-
     function hapus_barang($id){
         $this->m_konsumen->hapus_barang($id);
         redirect('konsumen');

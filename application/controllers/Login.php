@@ -10,8 +10,7 @@ class Login extends CI_Controller{
     }
     
     function masuk(){
-        $this->form_validation->set_rules('xemail', 'Email', 'trim|required|valid_email',
-         array('valid_email'=>'Masukkan Email yang valid', 'required'=>'Disisi Please'));
+        $this->form_validation->set_rules('xemail', 'Email', 'trim|required|valid_email',array('valid_email'=>'Masukkan Email yang valid', 'required'=>'Disisi Please'));
 		$this->form_validation->set_rules('xpassword', 'Password', 'trim|required|min_length[5]|max_length[12]');
         $pas= md5($this->input->post('xpassword'));
         if($this->form_validation->run() != false){
@@ -26,11 +25,9 @@ class Login extends CI_Controller{
                     
                 }
                 else{
-                    echo $pas;
                     redirect('login');
                 }
         }else{
-            echo $pas;
             $this->load->view('login/v_login');
         }
     }

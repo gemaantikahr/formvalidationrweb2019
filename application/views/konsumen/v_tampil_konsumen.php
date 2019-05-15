@@ -9,7 +9,6 @@
 <div class="container">
     <?php $this->load->view("_partials/navbar.php") ?>
 </div>
-
 <div class="container">
   <h2>Data Konsumen</h2>
   <p>Praktikum Rweb</p>            
@@ -20,6 +19,8 @@
         <th>Nama Barang</th>
         <th>Harga Satuan</th>
         <th>Jumlah</th>
+        <th>Total Harga</th>
+        <th>Harga Disc 20%</th>
         <th>Option</th>
       </tr>
     </thead>
@@ -31,6 +32,8 @@
         <td><?php echo $data->nama_barang?></td>
         <td><?php echo $data->harga_satuan?></td>
         <td><?php echo $data->jumlah?></td>
+        <td><?php echo $data->total_harga?></td>
+        <td><?php echo $data->harga_diskon?></td>
         <td>
             <a href="<?php echo site_url('konsumen/edit_barang/'.$data->id_konsumen) ?>" class="btn btn-small btn-info">edit</a>
 			<a href="<?php echo site_url('konsumen/hapus_barang/'.$data->id_konsumen) ?>" class="btn btn-small btn-danger">hapus</a>
