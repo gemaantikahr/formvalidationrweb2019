@@ -5,11 +5,12 @@ class M_konsumen extends CI_Model{
         return $query->result();
     }
     public function simpan_barang($nama, $harga, $jumlah){
+        $tanggal = date('y-m-d');
         $totalharga = $harga*$jumlah;
         $diskon = $totalharga*0.2;
         $hargadiskon = $totalharga-$diskon;
-        $query = $this->db->query("INSERT INTO tbl_konsumen(nama_barang,harga_satuan,jumlah,total_harga,harga_diskon)
-        VALUES('$nama','$harga','$jumlah','$totalharga','$hargadiskon')");
+        $query = $this->db->query("INSERT INTO tbl_konsumen(nama_barang,harga_satuan,jumlah,total_harga,harga_diskon, tanggal)
+        VALUES('$nama','$harga','$jumlah','$totalharga','$hargadiskon','$tanggal')");
         return $query;
     }
     public function edit_barang($idbarang){

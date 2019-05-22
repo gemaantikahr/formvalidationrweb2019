@@ -19,10 +19,11 @@ class Konsumen extends CI_Controller{
     function simpan_barang(){
         $this->form_validation->set_rules('xnama', 'Nama Barang', 'required|alpha_dash',
         array('alpha_dash'=>'Tidak boleh ada angka','required'=>'Harus di isi'));
-        $this->form_validation->set_rules('xharga', 'Nama Barang', 'required|numeric',
-        array('numeric'=>'Harus angka','required'=>'Harus di isi'));
-        $this->form_validation->set_rules('xjumlah', 'Nama Barang', 'required|numeric',
-        array('numeric'=>'Harus angka','required'=>'Harus di isi'));
+        $this->form_validation->set_rules('xharga', 'Nama Barang', 'required|numeric|is_natural_no_zero',
+        array('numeric'=>'Harus angka','required'=>'Harus di isi', 'is_natural_no_zero'=>'Tidak boleh bernilai nol'));
+        $this->form_validation->set_rules('xjumlah', 'Nama Barang', 'required|numeric|is_natural_no_zero',
+        array('numeric'=>'Harus angka','required'=>'Harus di isi', 'is_natural_no_zero'=>'Tidak boleh bernilai nol'));
+        
         if($this->form_validation->run() != false){
             $nama = $this->input->post('xnama');
             $harga = $this->input->post('xharga');

@@ -21,6 +21,7 @@
         <th>Jumlah</th>
         <th>Total Harga</th>
         <th>Harga Disc 20%</th>
+        <th>Tanggal Transaksi</th>
         <th>Option</th>
       </tr>
     </thead>
@@ -34,6 +35,7 @@
         <td><?php echo $data->jumlah?></td>
         <td><?php echo $data->total_harga?></td>
         <td><?php echo $data->harga_diskon?></td>
+        <td><?php echo $data->tanggal?></td>
         <td>
             <a href="<?php echo site_url('konsumen/edit_barang/'.$data->id_konsumen) ?>" class="btn btn-small btn-info">edit</a>
 			<a href="<?php echo site_url('konsumen/hapus_barang/'.$data->id_konsumen) ?>" class="btn btn-small btn-danger">hapus</a>
