@@ -82,4 +82,14 @@ class M_matakuliah extends CI_Model{
         $query = $this->db->query("UPDATE tbl_matkul set nama_matkul='$nama', semester='$semester' WHERE id_matkul='$id'");
         return $query;
     }
+
+    function simpan_matkul($idmatkul){
+        $query = $this->db->query("INSERT into tbl_krs(nama_mahasiswa,id_matkul) VALUES ('gema antika hariadi','$idmatkul')");
+        return $query;
+    }
+
+    function tampil_krs(){
+        $query = $this->db->query("SELECT *FROM tbl_krs, tbl_matkul WHERE tbl_krs.id_matkul = tbl_matkul.id_matkul");
+        return $query->result();
+    }
 }

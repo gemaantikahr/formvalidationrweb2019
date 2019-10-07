@@ -15,32 +15,23 @@
                         <p>Silahkan Login</p>
 					</span>
 
-					<?php echo form_open('login/masuk'); ?>
-					<div class="wrap-input100 validate-input" data-validate = "asd">
-                        <input class="input100" type="text" name="xemail">
-						<span class="focus-input100" data-placeholder="Email"></span>
-						<font color="red"><?php echo form_error('xemail');?></font> 
-					</div>
-					<br>					
-					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<span class="btn-show-pass">
-							<i class="zmdi zmdi-eye"></i>
-						</span>
-						<input class="input100" type="password" name="xpassword">
-						<span class="focus-input100" data-placeholder="Password" minlength="5" minlength="12"></span>
-						<font color="red"><?php echo form_error('xpassword');?></font> 
-					</div>
-					
 
-					<div class="container-login100-form-btn">
-						<div class="wrap-login100-form-btn">
-							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn" type="submit">
-								Masukan
-                            </button>
-                            
-						</div>
-                    </div>
+
+					<?php echo form_open('login/masuk'); ?>
+					<div class="form-group">
+						<label for="usr">Name:</label>
+						<input type="text" class="form-control" id="usr" name="xnim">
+						<font color="red"><?php echo form_error('xnim');?></font> 
+					</div>
+					<br>
+					<div class="form-group">
+						<label for="usr">Password:</label>
+						<input type="text" class="form-control" id="usr" name="xpassword">
+						<font color="red"><?php echo form_error('xpassword');?></font> 
+					</div>					
+					<button class="btn btn-info" type="submit">
+								Login
+                            </button>        
                 </form>
 
 					<div class="text-center p-t-115">
